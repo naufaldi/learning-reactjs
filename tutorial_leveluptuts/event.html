@@ -30,10 +30,21 @@
             }
         },
         componentDidMount:function(){
+            // this.setState({
+            //     value: this.state.value + 19
+            // });
+        },
+        _addByOne: function(){
             this.setState({
-                value: this.state.value + 19
+                value: this.state.value + 1
             });
         },
+        _hello:function(){
+            return(
+                <h1>Hello</h1>
+            )
+        },
+
         render: function(){
           var greeting = "World";
           if(this.props.isPerson){
@@ -41,8 +52,10 @@
           }
           return(
               <div> 
+              {this._hello()}
                 <h1>Hello {greeting}</h1>
                 {this.state.value}
+                <button onClick={this._addByOne}>Click Me</button>
               </div>
           )
         }
