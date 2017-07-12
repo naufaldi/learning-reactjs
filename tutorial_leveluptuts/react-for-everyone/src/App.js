@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react';
+import {render} from 'react-dom';
 import ContactsList from './ContactsList';
 
 let contacts = [{
