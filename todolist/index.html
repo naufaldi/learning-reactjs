@@ -34,6 +34,18 @@
         border: 2px solid #003399;
         cursor: pointer;
     }
+    .todoListMain .theList {
+        list-style: none;
+        padding-left: 0;
+        width: 225px;
+    }
+    .todoListMain .theList li {
+        color: #333;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, .5);
+        margin-bottom: 15px;
+        border-radius: 5px;
+    }
     </style>
 <body>
     <div id="container">
@@ -48,12 +60,17 @@
                     return <li key={item.key}> {item.text}</li>
                 }
                 var listItems = todoEntries.map(createTasks);
+                return (
+                    <ul className="theList">    
+                        {listItems}
+                    </ul>
+                );
               }
         });
         var TodoList = React.createClass({
-            getInitalState: function () {  
+            getInitialState: function () {  
                 return {
-                    item: []
+                    items: []
                 };
             },
             addItem:function (e) {
