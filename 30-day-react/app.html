@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React 30 Days</title>
+    <!-- Script tags including React -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+  <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+<div id="app"></div>
+
+<script type="text/babel">  
+    // var app = <h1>Hello World</h1>
+    // var mountComponent = document.querySelector('#app');
+    // ReactDOM.render (app,mountComponent);
+    var mountComponent = document.querySelector('#app');
+    ReactDOM.render(<App />, mountComponent);
+     class App extends React.Component {
+      render() {
+        return <h1>Hello from our app</h1>
+      }
+    }
+</script>
+</head>
+<body>
+    
+</body>
+</html>
