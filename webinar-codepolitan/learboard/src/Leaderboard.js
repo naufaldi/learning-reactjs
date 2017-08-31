@@ -7,8 +7,13 @@ class Leaderboard extends React.Component {
           { id: 2, name: "Naufaldi", score : 30},
           {id : 3, name: "Rafif", score: 10}
       ]
+        const styles = {
+          container: {
+            padding: 60
+          }
+        }
     return(
-    <div>
+    <div style={styles.container}>
       <h1> Leaderboard</h1>
       <Players members = { PLAYERS} />
     </div>
