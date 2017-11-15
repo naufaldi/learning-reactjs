@@ -1,19 +1,60 @@
 {
-  "name": "jesse-livecode",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "material-ui": "^0.19.4",
-    "material-ui-icons": "^1.0.0-beta.17",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.17",
-    "react-tap-event-plugin": "^3.0.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "name": "jesse-livecode",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "material-ui": "^0.19.4",
+        "material-ui-icons": "^1.0.0-beta.17",
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-router-dom": "^4.2.2",
+        "react-scripts": "1.0.17",
+        "react-tap-event-plugin": "^3.0.2"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "lint": "prettier 'src/**/*.js 'src/components/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix ",
+
+    },
+    "devDependencies": {
+        "babel-eslint": "^8.0.2",
+        "husky": "^0.14.3",
+        "lint-staged": "^5.0.0",
+        "nightmare": "^2.10.0",
+        "nightmare-upload": "^0.1.1",
+        "prettier": "^1.8.2",
+        "standard": "^10.0.3"
+    },
+    "lint-staged": {
+        "*.js": [
+            "prettier --write --single-quote --no-semi",
+            "standard --fix",
+            "git add"
+        ]
+    },
+    "standard": {
+        "globals": [
+            "fetch",
+            "FormData",
+            "describe",
+            "it",
+            "beforeEach",
+            "expect",
+            "handleClose",
+            "state",
+            "handleNext",
+            "handlePrev",
+            "handleChange",
+            "formatLabelToProperty",
+            "handleFilePath",
+            "handleFormData",
+            "handleDialogClose",
+            "componentDidMount",
+            "handleTabChange"
+        ],
+        "parser": "babel-eslint"
+    }
 }
