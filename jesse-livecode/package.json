@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "material-ui": "^0.19.4",
+        "material-ui": "^1.0.0-beta.23",
         "material-ui-icons": "^1.0.0-beta.17",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
@@ -16,8 +16,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-        "lint": "prettier 'src/**/*.js 'src/components/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix ",
-
+        "lint": "prettier 'src/**/*.js 'src/components/**/*.js' '*.js' --write --single-quote --no-semi && standard --fix "
     },
     "devDependencies": {
         "babel-eslint": "^8.0.2",
