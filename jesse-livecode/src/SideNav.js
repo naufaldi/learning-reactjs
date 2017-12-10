@@ -33,10 +33,12 @@ class SideNav extends Component {
     render(){
         return(
             <div>
-                <ButtonAppBar/>
-                {
-
-                }
+                <AppBar
+                    title='Resource Center'
+                    iconClassNameRight='muidocs-icon-navigation-expand-more'
+                    onLeftIconButtonTouchTap= {()=>
+                        this.setState({ open: !this.state.open})}
+                />
                 <Drawer 
                 open={this.state.open}
                 docked={false}
@@ -44,7 +46,13 @@ class SideNav extends Component {
                 >
                     { link.map((link,1) => {
                         return (
-                            <SideBarItem isExact={link.isExact} linkTo={link.linkTo} primaryText={link.text} handleClose={this.handleClose}  key={}
+                            <SideBarItem
+                             isExact={link.isExact} 
+                             linkTo={link.linkTo} 
+                             primaryText={link.text} 
+                             handleClose={this.handleClose}  
+                             key={i}
+                             />
                         )
                     })}               
                 </Drawer>

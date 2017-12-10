@@ -3,7 +3,16 @@ import React, {Component} from 'react'
 class Home extends Component {
     state={}
     render() {
-        return <h1> Home View </h1>
+        return(
+            <Paper elevation={4}>
+                <Typography type='headline' component='h3'>
+                This is a sheet of paper
+                <Typography>
+                <Typography type='body1' component='p'>
+                Paper can be  used to build surface or other elements application
+                </Typography>
+            </Paper>
+        )
     }
 }
 
