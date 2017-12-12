@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import {BrowserRouter, Route, NavLink} from 'react-router-dom';
+import './styles/materialize-grid.css'
+import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
 /* material ui */
 import {MuiThemeProvider} from 'material-ui/styles';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import fusTheme from './fusThemes'
 import SideNav from './SideNav'
 /* Import view */
@@ -14,19 +16,20 @@ import LogosPosters from './views/LogosPosters'
 import PlanningGuide from './views/PlanningGuide'
 import Posters from './views/Posters'
 import ServiceRequest from './views/ServiceRequest'
-import Services from './views/Serivices'
+import Services from './views/Services'
 import Story from './views/Story'
 import Tutorial from './views/Tutorial'
 import NotFound from './views/NotFound'
 // import RaisedButton from 'material-ui/RaisedButton';
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
+// import Switch from './Switch'
 injectTapEventPlugin();
 
 class App extends Component { 
   render(){
     return (
       <BrowserRouter>
-        <MuiThemeProvider theme={fusTheme>
+        <MuiThemeProvider theme={fusTheme}>
           <div>
             <SideNav/>
             <Switch>
@@ -34,7 +37,7 @@ class App extends Component {
             <Route exact path='/logos-posters' component={LogosPosters} />
             <Route exact path='/logos' component ={Logos}/>
             <Route exact path='/posters' component ={Posters} />
-            <Route exact path='/letterhead' component = {Letterhead}/> 
+            <Route exact path='/letterhead' component = {LetterHead}/> 
             <Route exact path='/share-a-story' component = {Story}/>
             <Route exact path='/planning-guide' component = {PlanningGuide}/>
             <Route exact path='/services' component = {Services}/>

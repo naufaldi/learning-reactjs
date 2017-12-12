@@ -1,4 +1,3 @@
-a {
-    text-decoration: none;
-    color: #000;
+.active div {
+    background-color: #eee;
 }
