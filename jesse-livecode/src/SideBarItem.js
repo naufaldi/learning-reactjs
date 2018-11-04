@@ -16,7 +16,7 @@ class SideBarItem extends Component {
             key={this.props.i}
             >
             <ListItem 
-            hoverColor="red"
+            // hoverColor="red"
             primaryText={this.props.primaryText} 
             onTouchTap={this.props.handleClose }
             hoverColor='#eee'
