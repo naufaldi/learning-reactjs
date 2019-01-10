@@ -8,9 +8,9 @@ class ReactForm extends React.Component {
  
    this.state = {
     name: '',
-    email: '',
-    subject: '',
-    message: ''
+    job: '',
+    // subject: '',
+    // message: ''
    }
  
    this.handleChange = this.handleChange.bind(this)
@@ -31,31 +31,22 @@ class ReactForm extends React.Component {
  
    let formData = {
     formSender: this.state.name,
-    formEmail: this.state.email,
-    formSubject: this.state.subject,
-    formMessage: this.state.message
+    formJob: this.state.job,
+    // formSubject: this.state.subject,
+    // formMessage: this.state.message
    }
  
-   if (formData.formSender.length < 1 || formData.formEmail.length < 1 || formData.formSubject.length < 1 || formData.formMessage.length < 1) {
+   if (formData.formSender.length < 1 || formData.formJob.length < 1 ) {
     return false
    }
  
    $.ajax({
-    url: '/some/url',
+    url: 'https://reqres.in/api/users',
     dataType: 'json',
     type: 'POST',
     data: formData,
-    success: function(data) {
-
-    //   if (confirm('Thank you for your message. Can I erase the form?')) {
-    //    this.setState({
-    //     firstName: '',
-    //     lastName: '',
-    //     email: '',
-    //     subject: '',
-    //     message: ''
-    //    })
-    //  }
+    success: function(data){
+        console.log(data);
     },
     error: function(xhr, status, err) {
      console.error(status, err.toString())
@@ -63,12 +54,12 @@ class ReactForm extends React.Component {
     }
    })
  
+ 
    this.setState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    subject: '',
-    message: ''
+   name:'',
+    job: '',
+    // subject: '',
+    // message: ''
    })
   }
  
@@ -79,17 +70,17 @@ class ReactForm extends React.Component {
  
      <fieldset className='form-group'>
       <ReactFormLabel htmlFor='formName' title='Full Name:' />
- 
+
       <input id='formName' className='form-input' name='name' type='text' required onChange={this.handleChange} value={this.state.name} />
      </fieldset>
  
      <fieldset className='form-group'>
-      <ReactFormLabel htmlFor='formEmail' title='Email:' />
+      <ReactFormLabel htmlFor='formJob' title='Job:' />
  
-      <input id='formEmail' className='form-input' name='email' type='email' required onChange={this.handleChange} value={this.state.email} />
+      <input id='formJob' className='form-input' name='job' type='text' required onChange={this.handleChange} value={this.state.job} />
      </fieldset>
  
-     <fieldset className='form-group'>
+     {/* <fieldset className='form-group'>
       <ReactFormLabel htmlFor='formSubject' title='Subject:'/>
  
       <input id='formSubject' className='form-input' name='subject' type='text' required onChange={this.handleChange} value={this.state.subject} />
@@ -99,7 +90,7 @@ class ReactForm extends React.Component {
       <ReactFormLabel htmlFor='formMessage' title='Message:' />
  
       <textarea id='formMessage' className='form-textarea' name='message' required onChange={this.handleChange}></textarea>
-     </fieldset>
+     </fieldset> */}
  
      <div className='form-group'>
       <input id='formButton' className='btn' type='submit' placeholder='Send message' />
