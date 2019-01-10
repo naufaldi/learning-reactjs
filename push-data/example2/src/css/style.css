@@ -1,0 +1,91 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  font: 100% / 1.414 sans-serif;
+}
+
+.header {
+  min-height: 50vh;
+  background-color: #fefefe;
+}
+
+form {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 320px;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+fieldset + fieldset {
+  margin-top: 24px;
+}
+
+label {
+  margin-bottom: 8px;
+  display: block;
+  color: #2b2e4a;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select,
+textarea {
+  padding: 8px;
+  width: 100%;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #bdc3c7;
+  border-left: 0;
+  -webkit-transition: border-bottom-color .15s ease-in;
+  transition: border-bottom-color .15s ease-in;
+}
+
+input:not([type=checkbox]):not([type=radio]):focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+  border-bottom-color: #3fc1c9;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 8px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3fc1c9;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: background-color .15s ease-in;
+  transition: background-color .15s ease-in;
+}
+
+button:focus:active {
+  background-color: #31a7ae;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  background-color: #7bd4da;
+}
+/*# sourceMappingURL=style.css.map */
