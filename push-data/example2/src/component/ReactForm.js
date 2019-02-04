@@ -45,18 +45,18 @@ class ReactForm extends React.Component {
     dataType: 'json',
     type: 'POST',
     data: formData,
-    success: function(data){
+      success: function(data){
         console.log(data);
-    },
-    error: function(xhr, status, err) {
-     console.error(status, err.toString())
-     alert('There was some problem with sending your message.')
-    }
-   })
- 
+    }},
+    // error: function(xhr, status, err) {
+    //  console.error(status, err.toString())
+    //  alert('There was some problem with sending your message.')
+    // }
+  //  })
  
    this.setState({
-   name:'',
+    firstName: '',
+    lastName: '',
     job: '',
     // subject: '',
     // message: ''
