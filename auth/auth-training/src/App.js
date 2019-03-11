@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Redirect,withRouter } from 'react-router-dom';
 
 const fakeAuth = {
 	isAuthenticated: false,
@@ -22,6 +21,16 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 		render={(props) => (fakeAuth.isAuthenticated === true ? <Component {...props} /> : <Redirect to="/login" />)}
 	/>
 );
+const AuthButton = withRouter(({history})=>(
+	fakeAuth.isAuthenticated ?(
+		<p>
+			Welcome <button onClick={()=>{
+				fakeAuth.signout(()=>history.push('/'))
+			}} >Sign Out</button>
+		</p>
+	):
+	<p>You need login</p>
+))
 class Login extends Component {
 	state = {
 		redirectToReferer: false
@@ -39,7 +48,7 @@ class Login extends Component {
 			return <Redirect to={{
         pathname:"/login",
         state:{
-          {from: props.location}
+          // {from: props.location}
         }
       }} />;
 		}
@@ -57,6 +66,7 @@ class App extends Component {
 		return (
 			<Router>
 				<div>
+				<AuthButton/>
 					<ul>
 						<li>
 							<Link to="/public">Public Page</Link>
