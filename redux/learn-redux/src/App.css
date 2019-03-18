@@ -1,0 +1,36 @@
+.App {
+  width: 320px;
+  border-radius: 8px;
+  margin: 96px auto;
+  background-color: white;
+}
+
+.App * {
+  outline-width: 0px;
+}
+
+.App__form {
+  border-bottom: 1px solid #ccc;
+  padding: 24px;
+}
+
+.App__input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+}
+
+.App__button {
+  width: 100%;
+  padding: 8px;
+  border: 0px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-top: 16px;
+  background-color: #f0690f;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+.ContactItem {
+  border-bottom: 1px solid #ccc;
+  padding: 24px;
+}
+
+.ContactItem__name,
+.ContactItem__phone {
+  margin: 0px;
+  margin-bottom: 8px;
+}
+
+.ContactItem__name {
+  font-weight: bold;
+}
+
+.ContactItem__phone {
+  color: #999;
+}
+
+.ContactItem__button {
+  padding: 4px 8px;
+  border: 0px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  margin-bottom: 4px;
+  background-color: #d32b1f;
+  color: white;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 12px;
+}
