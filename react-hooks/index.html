@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Add React in One Minute</title>
+</head>
+<style>
+  body {
+    padding: 5px;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    border-radius: 4px;
+    height: 40px;
+    color: #fff;
+    background: #c4c4c4;
+    border: 1px solid inherit;
+  }
+
+  button:hover {
+    color: #fff;
+    background: #DD4B39;
+  }
+
+  .count {
+    padding: 5px;
+    margin: 5px;
+    font-size: 2em
+  }
+</style>
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <script type="text/babel">
+    const { useState, useContext } = React
+
+const CountContext = React.createContext();
+
+const Counter = () => {
+  const { count, increase, decrease } = useContext(CountContext);
+  return (
+    <div className="wrapper">
+      <button onClick={decrease}>-</button>
+      <span className="count">{count}</span>
+      <button onClick={increase}>+</button>
+    </div>
+  );
+};
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const increase = () => {
+    setCount(count + 1);
+  };
+  const decrease = () => {
+    setCount(count - 1);
+  };
+
+  return (
+    <div>
+      <CountContext.Provider
+        value={{ count, increase, decrease }}
+      >
+        <Counter />
+      </CountContext.Provider>
+    </div>
+  );
+};
+    ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+    );
+  </script>
+</body>
+
+</html>
