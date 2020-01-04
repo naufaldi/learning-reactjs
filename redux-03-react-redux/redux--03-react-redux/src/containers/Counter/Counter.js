@@ -29,25 +29,43 @@ class Counter extends Component {
     render () {
         return (
             <div>
+            {/* Props ctr because its value to Redux */}
                 <CounterOutput value={this.props.ctr} />
+                {/* Pass to Props */}
                 <CounterControl label="Increment" clicked={this.props.onIncrementCounter} />
-                <CounterControl label="Decrement" clicked={() => this.counterChangedHandler( 'dec' )}  />
-                <CounterControl label="Add 5" clicked={() => this.counterChangedHandler( 'add', 5 )}  />
-                <CounterControl label="Subtract 5" clicked={() => this.counterChangedHandler( 'sub', 5 )}  />
+                <CounterControl label="Decrement" clicked={this.props.onDecrementCounter}  />
+                <CounterControl label="Add 5" clicked={this.props.onAddCounter}  />
+                <CounterControl label="Subtract 5" clicked={this.props.onSubtrackCounter}  />
+                <button onClick={this.props.onStoreResult}>Display Result</button>
+                <ul>
+                {this.props.storedResults.map((strResults) => {
+									<li key={strResults.id} onClick={this.props.onDeleteResult}>{strResults.value}</li>
+								})};
+                </ul>
             </div>
+
         );
     }
 }
 
+// Giving Information what we need
 const mapStateToProps = state => {
     return {
-        ctr: state.counter
+        // Counter from redux
+        ctr: state.counter,
+        storedResults: state.result
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        onIncrementCounter: () => dispatch({type: 'INCREMENT'})
+        // Dispatch an Action
+        onIncrementCounter: () => dispatch({type: 'INCREMENT'}),
+        onDecrementCounter: () => dispatch({type: 'DECREMENT'}),
+        onAddCounter: () => dispatch({type: 'ADD', val : 10}),
+        onSubtrackCounter: () => dispatch({type: 'SUBTRACK', val : 15}),
+        onStoreResult: () => dispatch({type: 'STORE_RESULT', val : 15}),
+        onDeleteResult: () => dispatch({type: 'DELETE_RESULT', val : 15}),
     };
 };
 
